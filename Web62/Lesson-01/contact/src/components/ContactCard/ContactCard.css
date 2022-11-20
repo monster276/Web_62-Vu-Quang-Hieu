@@ -1,0 +1,31 @@
+.card{
+    border: none;
+    color: blue;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: none;
+}
+.info{
+    display: flex;
+    justify-content: space-between;
+}
+.type{
+    height: auto;
+    width: auto;
+    background-color: green;
+    color: black
+}
+
+.delete-button, .edit-button{
+    margin-right: 10px;
+    border: none;
+    height: 30px;
+    width: 60px;
+    text-align: center;
+
+}
+.content{
+    background-color: gainsboro;
+    padding: 10px;
+    margin-bottom: 20px;
+}
