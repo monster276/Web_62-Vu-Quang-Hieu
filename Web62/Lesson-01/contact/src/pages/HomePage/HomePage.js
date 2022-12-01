@@ -33,8 +33,6 @@ export const initialValues = {
   type: PERSONAL,
 };
 const HomePage = () => {
-  const [formErrors, setFormErrors] = useState({});
-  const [error,setError]=useState({})
   const [contacts, setContacts] = useState([]);
   const [contactForm, setContactForm] = useState(initialValues);
   useEffect(() => {
@@ -56,7 +54,6 @@ const HomePage = () => {
     }
   };
   const validate = (values) => {
-    const errors = {};
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
     if (!values.name) {
       alert("Name is required!") ;
@@ -69,7 +66,7 @@ const HomePage = () => {
     if (!values.phone) {
       alert("Phone is required");
     }
-    return errors;
+    return values;
   };
   return (
     <div className="container mt-4">
