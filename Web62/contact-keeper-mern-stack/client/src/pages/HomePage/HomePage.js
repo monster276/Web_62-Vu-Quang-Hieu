@@ -32,6 +32,7 @@ const HomePage = () => {
       <ContactContext.Provider
         value={{
           contacts,
+          setContactsData,
         }}
       >
         <div className="row">

@@ -5,7 +5,8 @@ import ContactService from '../../services/contactServices'
 
 const ContactCard = (props) => {
   const { contact } = props
-  const {setContactsData} = useContext(contactContext)
+  const ctxContact = useContext(contactContext)
+  const { setContactsData } = useContext(contactContext)
   const { id, name, email, phone, type } = contact
   const typeClassName =
     type === PROFESSIONAL ? 'badge bg-danger' : 'badge bg-success'
@@ -17,10 +18,14 @@ const ContactCard = (props) => {
           <h6 className="card-subtitle mb-2 text-muted">{email}</h6>
           <p className="card-text">{phone}</p>
           <p className={typeClassName}>{type}</p>
-          <button>Edit</button>
+          <button
+            onClick={()=>ctxContact.set }
+          >
+            Edit
+          </button>
           <button
             onClick={async () => {
-              const rest = await ContactService.delete(id);
+              const rest = await ContactService.delete(id)
               setContactsData(rest.data.data)
             }}
           >
